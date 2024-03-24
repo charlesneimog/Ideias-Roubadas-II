@@ -16,7 +16,7 @@
 
 # Dependencies
 
-If you want to run or test the piece.
+If you want to build your piece or generate this piece.
 
 ## Orchidea Sol
 
