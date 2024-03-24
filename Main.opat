@@ -1,15 +1,15 @@
 
 (:patch
- (:name "Ideias Roubadas II")
+ (:name "Main")
  (:doc "")
  (:info
   (:created "2021/05/06 12:47:06")
-  (:modified "2023/04/25 12:31:48")
+  (:modified "2024/03/23 23:35:55")
   (:by "om-sharp")
   (:version 1.07))
- (:window (:size (992 932)) (:position (646 80)))
+ (:window (:size (920 700)) (:position (480 283)))
  (:grid nil)
- (:lock nil)
+ (:lock t)
  (:boxes
   (:box
    (:type :abstraction)
@@ -22,7 +22,7 @@
       (:modified nil)
       (:by *app-name*)
       (:version 0))
-     (:window (:size (1023 650)) (:position (224 224)))
+     (:window (:size (951 1043)) (:position (100 134)))
      (:grid nil)
      (:lock nil)
      (:boxes
@@ -32,8 +32,8 @@
         (:out (:type omout) (:name "output 1") (:index 1) (:doc "")))
        (:group-id nil)
        (:name "output 1")
-       (:x 286)
-       (:y 530)
+       (:x 368)
+       (:y 424)
        (:w 88)
        (:h 42)
        (:color
@@ -59,8 +59,8 @@
        (:reference textbuffer)
        (:group-id nil)
        (:name nil)
-       (:x 104)
-       (:y 245)
+       (:x 145)
+       (:y 240)
        (:w 334)
        (:h 83)
        (:color nil)
@@ -70,7 +70,7 @@
        (:align :center)
        (:display :mini-view)
        (:showname nil)
-       (:lock :locked)
+       (:lock nil)
        (:lambda nil)
        (:reactive nil)
        (:inputs
@@ -129,10 +129,10 @@
        (:reference flat)
        (:group-id nil)
        (:name "flat")
-       (:x 286)
-       (:y 469)
+       (:x 382)
+       (:y 364)
        (:w 71)
-       (:h 34)
+       (:h 30)
        (:color nil)
        (:border nil)
        (:roundness nil)
@@ -160,8 +160,8 @@
        (:reference bit)
        (:group-id nil)
        (:name "value box")
-       (:x 320)
-       (:y 433)
+       (:x 413)
+       (:y 328)
        (:w 34)
        (:h 37)
        (:color
@@ -179,14 +179,37 @@
        (:value 1)
        (:id 3))
       (:box
+       (:type :io)
+       (:reference
+        (:in (:type omin) (:index 1) (:name "in") (:doc "")))
+       (:group-id nil)
+       (:name "in")
+       (:x 121)
+       (:y 96)
+       (:w 40)
+       (:h 42)
+       (:color
+        (:color-or-nil
+         (:color (:color 1.0 1.0 1.0 0.0))
+         (:t-or-nil t)))
+       (:border 0)
+       (:roundness 0)
+       (:text-font nil)
+       (:align :center)
+       (:icon :top)
+       (:reactive nil)
+       (:inputs)
+       (:outputs (:output (:name "out") (:reactive nil)))
+       (:id 4))
+      (:box
        (:type :value)
        (:reference (:symbol "SIMPLE-TEXT-STRING" "LISPWORKS"))
        (:group-id nil)
        (:name "value box")
-       (:x 181)
-       (:y 59)
-       (:w 500)
-       (:h 59)
+       (:x 240)
+       (:y 132)
+       (:w 68)
+       (:h 30)
        (:color
         (:color-or-nil
          (:color (:color 1.0 1.0 1.0 1.0))
@@ -199,22 +222,50 @@
        (:reactive nil)
        (:inputs)
        (:outputs (:output (:name "value") (:reactive nil)))
-       (:value
-        "C:/Users/Neimog/OneDrive_usp.br/Documents/Composition/Ideias Roubadas II/pan.txt")
-       (:id 4)))
+       (:value "pan.txt")
+       (:id 5))
+      (:box
+       (:type :function)
+       (:reference make-pathname)
+       (:group-id nil)
+       (:name "make-pathname")
+       (:x 171)
+       (:y 205)
+       (:w 127)
+       (:h 30)
+       (:color nil)
+       (:border nil)
+       (:roundness nil)
+       (:text-font nil)
+       (:align nil)
+       (:icon :left)
+       (:lock nil)
+       (:lambda nil)
+       (:reactive nil)
+       (:inputs
+        (:input
+         (:type :key)
+         (:name "directory")
+         (:value nil)
+         (:reactive nil))
+        (:input
+         (:type :key)
+         (:name "name")
+         (:value nil)
+         (:reactive nil)))
+       (:outputs (:output (:name "out") (:reactive nil)))
+       (:id 6)))
      (:connections
       (:connection (:from (:box 1 :out 1)) (:to (:box 2 :in 0)))
-      (:connection
-       (:from (:box 2 :out 0))
-       (:to (:box 0 :in 0))
-       (:attributes
-        (:color (:color 0.2 0.4 0.5 1.0) :style :curved :modif nil)))
+      (:connection (:from (:box 2 :out 0)) (:to (:box 0 :in 0)))
       (:connection (:from (:box 3 :out 0)) (:to (:box 2 :in 1)))
-      (:connection (:from (:box 4 :out 0)) (:to (:box 1 :in 0))))))
+      (:connection (:from (:box 4 :out 0)) (:to (:box 6 :in 0)))
+      (:connection (:from (:box 5 :out 0)) (:to (:box 6 :in 1)))
+      (:connection (:from (:box 6 :out 0)) (:to (:box 1 :in 0))))))
    (:group-id nil)
    (:name "pan")
-   (:x 243)
-   (:y 338)
+   (:x 702)
+   (:y 414)
    (:w 176)
    (:h 60)
    (:color nil)
@@ -227,7 +278,12 @@
    (:lock nil)
    (:lambda nil)
    (:reactive nil)
-   (:inputs)
+   (:inputs
+    (:input
+     (:type :standard)
+     (:name "in")
+     (:value nil)
+     (:reactive nil)))
    (:outputs (:output (:name "output 1") (:reactive nil)))
    (:id 0))
   (:box
@@ -235,8 +291,8 @@
    (:reference voice)
    (:group-id nil)
    (:name nil)
-   (:x 54)
-   (:y 93)
+   (:x 60)
+   (:y 262)
    (:w 631)
    (:h 218)
    (:color nil)
@@ -473,7 +529,7 @@
       ((:onset 0)
        (:duration 59816)
        (:interpol (:number-or-nil (:number 50) (:t-or-nil nil)))
-       (:name "nil")
+       (:name "VOICE")
        (:default-frame-type chord)
        (:symbolic-date nil)
        (:symbolic-dur nil)
@@ -1376,7 +1432,7 @@
       (:modified nil)
       (:by *app-name*)
       (:version 0))
-     (:window (:size (1440 749)) (:position (240 118)))
+     (:window (:size (951 1043)) (:position (816 31)))
      (:grid nil)
      (:lock nil)
      (:boxes
@@ -1387,7 +1443,7 @@
        (:group-id nil)
        (:name "output 1")
        (:x 125)
-       (:y 562)
+       (:y 724)
        (:w 88)
        (:h 42)
        (:color
@@ -1413,10 +1469,10 @@
        (:reference voice)
        (:group-id 2)
        (:name nil)
-       (:x 34)
-       (:y 284)
-       (:w 1784)
-       (:h 143)
+       (:x 33)
+       (:y 446)
+       (:w 348)
+       (:h 129)
        (:color nil)
        (:border nil)
        (:roundness nil)
@@ -1507,183 +1563,183 @@
          (:list
           (:list -1000 0)
           (:list 0 8.3)
-          (:list 849 15.05)
-          (:list 1132 20.099999)
-          (:list 1415 24.349999)
-          (:list 1698 39.399998)
-          (:list 2830 48.199997)
-          (:list 3113 66.2)
-          (:list 3396 71.25)
-          (:list 3679 75.5)
-          (:list 3962 79.75)
-          (:list 4245 85.5)
-          (:list 4528 92.05)
-          (:list 4811 95.8)
-          (:list 4892 99.65714)
-          (:list 5054 103.37143)
-          (:list 5216 106.58572)
-          (:list 5377 120.8)
-          (:list 5629 124.41112)
-          (:list 5755 128.46668)
-          (:list 6509 144.8)
-          (:list 6792 151.13333)
-          (:list 6863 168.26667)
-          (:list 7090 172.26667)
-          (:list 7316 176.26667)
-          (:list 7542 181.06667)
-          (:list 8222 187.86667)
-          (:list 8448 191.86667)
-          (:list 8675 195.36667)
-          (:list 8856 200.46668)
-          (:list 9037 204.26668)
-          (:list 9127 217.66667)
-          (:list 9389 221.32051)
-          (:list 9476 226.00513)
-          (:list 10172 231.58205)
-          (:list 10259 245.46666)
-          (:list 10712 250.46666)
-          (:list 10939 253.96666)
-          (:list 11052 257.96668)
-          (:list 11165 261.46668)
-          (:list 11392 264.46668)
-          (:list 11618 268.46668)
-          (:list 12524 285.46668)
-          (:list 12750 289.96668)
-          (:list 13090 294.46668)
-          (:list 13184 298.46668)
-          (:list 13373 303.6)
-          (:list 13656 317.85)
-          (:list 14222 334.15)
-          (:list 15071 354.0)
-          (:list 15495 360.375)
-          (:list 15637 364.0)
-          (:list 15920 368.425)
-          (:list 16203 378.175)
-          (:list 16344 382.3)
-          (:list 16486 385.925)
-          (:list 16627 389.55)
-          (:list 16769 393.175)
-          (:list 17335 408.675)
-          (:list 18325 416.84998)
-          (:list 19175 433.59998)
-          (:list 19532 438.9789)
-          (:list 19890 443.55786)
-          (:list 20247 448.1368)
-          (:list 20605 454.21576)
-          (:list 20962 460.2947)
-          (:list 21081 463.821)
-          (:list 21260 467.61047)
-          (:list 21439 477.39993)
-          (:list 21722 481.14993)
-          (:list 22005 486.69992)
-          (:list 22288 490.94992)
-          (:list 22571 495.19992)
-          (:list 22854 499.44992)
-          (:list 23137 503.19992)
-          (:list 23218 508.55707)
-          (:list 23379 513.77137)
-          (:list 23541 516.98566)
-          (:list 23622 520.8428)
-          (:list 23703 533.6999)
-          (:list 23915 547.6374)
-          (:list 24041 552.4929)
-          (:list 24292 556.604)
-          (:list 24544 560.2151)
-          (:list 24670 564.2706)
-          (:list 25047 582.2373)
-          (:list 25613 593.5373)
-          (:list 25755 611.5373)
-          (:list 25981 615.0373)
-          (:list 26434 621.3373)
-          (:list 26660 625.3373)
-          (:list 26887 629.3373)
-          (:list 27113 634.8373)
-          (:list 27340 640.3373)
-          (:list 27566 643.8373)
-          (:list 27631 647.623)
-          (:list 27760 651.1944)
-          (:list 27889 654.2658)
-          (:list 27954 658.0515)
-          (:list 28019 670.8372)
-          (:list 28245 675.3372)
-          (:list 28547 680.4705)
-          (:list 28648 683.415)
-          (:list 29050 688.69275)
-          (:list 29151 703.6372)
-          (:list 29292 711.0622)
-          (:list 29505 715.9997)
-          (:list 29646 731.6247)
-          (:list 30099 747.6247)
-          (:list 30453 754.4872)
-          (:list 30983 761.83094)
-          (:list 31337 766.89344)
-          (:list 31868 773.7372)
-          (:list 32222 788.7997)
-          (:list 33071 806.0497)
-          (:list 33297 810.0497)
-          (:list 33448 813.2164)
-          (:list 33599 816.88306)
-          (:list 34052 822.38306)
-          (:list 34203 826.04975)
-          (:list 34354 829.21644)
-          (:list 34505 832.8831)
-          (:list 34656 837.0498)
-          (:list 34807 840.2165)
-          (:list 34958 843.8832)
-          (:list 35146 848.2165)
-          (:list 35335 858.8498)
-          (:list 35561 862.8498)
-          (:list 35742 866.1498)
-          (:list 35924 870.44977)
-          (:list 36105 873.74976)
-          (:list 36286 878.84974)
-          (:list 36467 883.4497)
-          (:list 36618 887.2497)
-          (:list 36769 890.4164)
-          (:list 36920 894.58307)
-          (:list 37071 897.74976)
-          (:list 37222 901.91645)
-          (:list 37410 905.74976)
-          (:list 37599 919.08307)
-          (:list 37741 923.20807)
-          (:list 38731 940.58307)
-          (:list 39297 958.75806)
-          (:list 39524 962.75806)
-          (:list 39675 965.92475)
-          (:list 39825 969.59144)
-          (:list 40278 975.09144)
-          (:list 40429 978.7581)
-          (:list 40580 981.9248)
-          (:list 40731 985.5915)
-          (:list 40882 989.7582)
-          (:list 41033 992.92487)
-          (:list 41184 996.59156)
-          (:list 41373 1000.92487)
-          (:list 41561 1014.7582)
-          (:list 42693 1033.5581)
-          (:list 43259 1049.0581)
-          (:list 44108 1065.8081)
-          (:list 45099 1083.9832)
-          (:list 49627 1116.4832)
-          (:list 49910 1121.2332)
-          (:list 50759 1137.9832)
-          (:list 51608 1144.7332)
-          (:list 51892 1149.7832)
-          (:list 52175 1154.0332)
-          (:list 52458 1164.2832)
-          (:list 53307 1171.0332)
-          (:list 53590 1176.0833)
-          (:list 53873 1180.3333)
-          (:list 54156 1194.5833)
-          (:list 58118 1208.8333))))
+          (:list 1500 15.05)
+          (:list 2000 20.099999)
+          (:list 2500 24.349999)
+          (:list 3000 39.399998)
+          (:list 5000 48.199997)
+          (:list 5500 66.2)
+          (:list 6000 71.25)
+          (:list 6500 75.5)
+          (:list 7000 79.75)
+          (:list 7500 85.5)
+          (:list 8000 92.05)
+          (:list 8500 95.8)
+          (:list 8643 99.65714)
+          (:list 8929 103.37143)
+          (:list 9214 106.58572)
+          (:list 9500 120.8)
+          (:list 9944 124.41112)
+          (:list 10167 128.46668)
+          (:list 11500 144.8)
+          (:list 12000 151.13333)
+          (:list 12125 168.26667)
+          (:list 12525 172.26667)
+          (:list 12925 176.26667)
+          (:list 13325 181.06667)
+          (:list 14525 187.86667)
+          (:list 14925 191.86667)
+          (:list 15325 195.36667)
+          (:list 15645 200.46668)
+          (:list 15965 204.26668)
+          (:list 16125 217.66667)
+          (:list 16587 221.32051)
+          (:list 16740 226.00513)
+          (:list 17971 231.58205)
+          (:list 18125 245.46666)
+          (:list 18925 250.46666)
+          (:list 19325 253.96666)
+          (:list 19525 257.96668)
+          (:list 19725 261.46668)
+          (:list 20125 264.46668)
+          (:list 20525 268.46668)
+          (:list 22125 285.46668)
+          (:list 22525 289.96668)
+          (:list 23125 294.46668)
+          (:list 23292 298.46668)
+          (:list 23625 303.6)
+          (:list 24125 317.85)
+          (:list 25125 334.15)
+          (:list 26625 354.0)
+          (:list 27375 360.375)
+          (:list 27625 364.0)
+          (:list 28125 368.425)
+          (:list 28625 378.175)
+          (:list 28875 382.3)
+          (:list 29125 385.925)
+          (:list 29375 389.55)
+          (:list 29625 393.175)
+          (:list 30625 408.675)
+          (:list 32375 416.84998)
+          (:list 33875 433.59998)
+          (:list 34507 438.9789)
+          (:list 35138 443.55786)
+          (:list 35770 448.1368)
+          (:list 36401 454.21576)
+          (:list 37033 460.2947)
+          (:list 37243 463.821)
+          (:list 37559 467.61047)
+          (:list 37875 477.39993)
+          (:list 38375 481.14993)
+          (:list 38875 486.69992)
+          (:list 39375 490.94992)
+          (:list 39875 495.19992)
+          (:list 40375 499.44992)
+          (:list 40875 503.19992)
+          (:list 41018 508.55707)
+          (:list 41304 513.77137)
+          (:list 41589 516.98566)
+          (:list 41732 520.8428)
+          (:list 41875 533.6999)
+          (:list 42250 547.6374)
+          (:list 42472 552.4929)
+          (:list 42917 556.604)
+          (:list 43361 560.2151)
+          (:list 43583 564.2706)
+          (:list 44250 582.2373)
+          (:list 45250 593.5373)
+          (:list 45500 611.5373)
+          (:list 45900 615.0373)
+          (:list 46700 621.3373)
+          (:list 47100 625.3373)
+          (:list 47500 629.3373)
+          (:list 47900 634.8373)
+          (:list 48300 640.3373)
+          (:list 48700 643.8373)
+          (:list 48814 647.623)
+          (:list 49043 651.1944)
+          (:list 49271 654.2658)
+          (:list 49386 658.0515)
+          (:list 49500 670.8372)
+          (:list 49900 675.3372)
+          (:list 50433 680.4705)
+          (:list 50611 683.415)
+          (:list 51322 688.69275)
+          (:list 51500 703.6372)
+          (:list 51750 711.0622)
+          (:list 52125 715.9997)
+          (:list 52375 731.6247)
+          (:list 53175 747.6247)
+          (:list 53800 754.4872)
+          (:list 54738 761.83094)
+          (:list 55362 766.89344)
+          (:list 56300 773.7372)
+          (:list 56925 788.7997)
+          (:list 58425 806.0497)
+          (:list 58825 810.0497)
+          (:list 59092 813.2164)
+          (:list 59358 816.88306)
+          (:list 60158 822.38306)
+          (:list 60425 826.04975)
+          (:list 60692 829.21644)
+          (:list 60958 832.8831)
+          (:list 61225 837.0498)
+          (:list 61492 840.2165)
+          (:list 61758 843.8832)
+          (:list 62092 848.2165)
+          (:list 62425 858.8498)
+          (:list 62825 862.8498)
+          (:list 63145 866.1498)
+          (:list 63465 870.44977)
+          (:list 63785 873.74976)
+          (:list 64105 878.84974)
+          (:list 64425 883.4497)
+          (:list 64692 887.2497)
+          (:list 64958 890.4164)
+          (:list 65225 894.58307)
+          (:list 65492 897.74976)
+          (:list 65758 901.91645)
+          (:list 66092 905.74976)
+          (:list 66425 919.08307)
+          (:list 66675 923.20807)
+          (:list 68425 940.58307)
+          (:list 69425 958.75806)
+          (:list 69825 962.75806)
+          (:list 70092 965.92475)
+          (:list 70358 969.59144)
+          (:list 71158 975.09144)
+          (:list 71425 978.7581)
+          (:list 71692 981.9248)
+          (:list 71958 985.5915)
+          (:list 72225 989.7582)
+          (:list 72492 992.92487)
+          (:list 72758 996.59156)
+          (:list 73092 1000.92487)
+          (:list 73425 1014.7582)
+          (:list 75425 1033.5581)
+          (:list 76425 1049.0581)
+          (:list 77925 1065.8081)
+          (:list 79675 1083.9832)
+          (:list 87675 1116.4832)
+          (:list 88175 1121.2332)
+          (:list 89675 1137.9832)
+          (:list 91175 1144.7332)
+          (:list 91675 1149.7832)
+          (:list 92175 1154.0332)
+          (:list 92675 1164.2832)
+          (:list 94175 1171.0332)
+          (:list 94675 1176.0833)
+          (:list 95175 1180.3333)
+          (:list 95675 1194.5833)
+          (:list 102675 1208.8333))))
        (:value
         (:object
          (:class voice)
          (:slots
           ((:onset 0)
-           (:duration 59816)
+           (:duration 105675)
            (:interpol (:number-or-nil (:number 50) (:t-or-nil nil)))
-           (:name "VOICE")
+           (:name "nil")
            (:default-frame-type chord)
            (:symbolic-date nil)
            (:symbolic-dur nil)
@@ -1903,234 +1959,234 @@
            (:lonset
             (:list
              0
-             849
-             1132
-             1415
-             1698
-             3113
-             3396
-             3679
-             3962
-             4245
-             4528
-             4892
-             5054
-             5377
-             5755
-             6863
-             7090
-             7316
-             7542
-             8222
-             8448
-             8856
-             9037
-             9127
-             9476
-             10259
-             10712
-             11052
-             12750
-             13373
-             13656
-             14222
-             15071
-             15495
-             15920
-             16344
-             16486
-             16627
-             16769
-             17335
-             18325
-             19175
-             19532
-             19890
-             20247
-             20605
-             20962
-             21081
-             21260
-             21439
-             22005
-             22288
-             22571
-             22854
-             23218
-             23379
-             23622
-             24041
-             24292
-             24670
-             25047
-             25755
-             26434
-             26660
-             26887
-             27113
-             27340
-             27631
-             27760
-             27954
-             28245
-             28547
-             29050
-             29151
-             29292
-             29646
-             30453
-             30983
-             31868
-             33071
-             33297
-             34052
-             34656
-             35146
-             35335
-             35561
-             35924
-             36286
-             36618
-             36920
-             37222
-             37410
-             37741
-             39297
-             39524
-             40278
-             40882
-             41373
-             41561
-             42693
-             43259
-             44108
-             45099
-             49910
-             50759
-             51608
-             51892
-             52175
-             52458
-             53307
-             53590
-             53873
-             58118
-             59816))
+             1500
+             2000
+             2500
+             3000
+             5500
+             6000
+             6500
+             7000
+             7500
+             8000
+             8643
+             8929
+             9500
+             10167
+             12125
+             12525
+             12925
+             13325
+             14525
+             14925
+             15645
+             15965
+             16125
+             16740
+             18125
+             18925
+             19525
+             22525
+             23625
+             24125
+             25125
+             26625
+             27375
+             28125
+             28875
+             29125
+             29375
+             29625
+             30625
+             32375
+             33875
+             34507
+             35138
+             35770
+             36401
+             37033
+             37243
+             37559
+             37875
+             38875
+             39375
+             39875
+             40375
+             41018
+             41304
+             41732
+             42472
+             42917
+             43583
+             44250
+             45500
+             46700
+             47100
+             47500
+             47900
+             48300
+             48814
+             49043
+             49386
+             49900
+             50433
+             51322
+             51500
+             51750
+             52375
+             53800
+             54738
+             56300
+             58425
+             58825
+             60158
+             61225
+             62092
+             62425
+             62825
+             63465
+             64105
+             64692
+             65225
+             65758
+             66092
+             66675
+             69425
+             69825
+             71158
+             72225
+             73092
+             73425
+             75425
+             76425
+             77925
+             79675
+             88175
+             89675
+             91175
+             91675
+             92175
+             92675
+             94175
+             94675
+             95175
+             102675
+             105675))
            (:ldur
             (:list
-             (:list 849)
-             (:list 283)
-             (:list 283)
-             (:list 283)
-             (:list 1415)
-             (:list 283)
-             (:list 283)
-             (:list 283)
-             (:list 283)
-             (:list 283 283 283 283)
-             (:list 283)
-             (:list 162)
-             (:list 162)
-             (:list 252)
-             (:list 1108)
-             (:list 227)
-             (:list 226)
-             (:list 226)
-             (:list 680)
-             (:list 226)
-             (:list 227)
-             (:list 181)
-             (:list 90)
-             (:list 262)
-             (:list 696)
-             (:list 453)
-             (:list 227)
-             (:list 340)
-             (:list 434)
-             (:list 283)
-             (:list 566)
-             (:list 849)
-             (:list 424 424 424 424)
-             (:list 425)
-             (:list 283)
-             (:list 142)
-             (:list 141)
-             (:list 142)
-             (:list 566)
-             (:list 990)
-             (:list 850)
-             (:list 357)
-             (:list 358)
-             (:list 357)
-             (:list 358)
-             (:list 357 357 357 357)
-             (:list 119)
-             (:list 179)
-             (:list 179)
-             (:list 283)
-             (:list 283)
-             (:list 283)
-             (:list 283)
-             (:list 283)
-             (:list 161 161 161 161)
-             (:list 162)
-             (:list 81)
-             (:list 251)
-             (:list 252)
-             (:list 377)
-             (:list 708 708 708 708 708 708)
-             (:list 226)
-             (:list 226)
-             (:list 227)
-             (:list 226)
-             (:list 227 227 227 227)
-             (:list 226)
-             (:list 129)
-             (:list 129)
-             (:list 65)
-             (:list 302)
-             (:list 101)
-             (:list 101)
-             (:list 141 141 141 141)
-             (:list 213 213 213 213)
-             (:list 453 453 453 453)
-             (:list 530 530 530)
-             (:list 354 354 354)
-             (:list 354 354 354)
-             (:list 226)
-             (:list 151)
-             (:list 302)
-             (:list 151)
-             (:list 189)
-             (:list 226)
-             (:list 181)
-             (:list 181)
-             (:list 332)
-             (:list 151)
-             (:list 151)
-             (:list 188)
-             (:list 189)
-             (:list 1556)
-             (:list 227)
-             (:list 151)
-             (:list 302)
-             (:list 151)
-             (:list 188)
-             (:list 1132)
-             (:list 566)
-             (:list 849)
-             (:list 991)
-             (:list 4528)
-             (:list 849)
-             (:list 849)
-             (:list 284)
-             (:list 283)
-             (:list 283)
-             (:list 849)
-             (:list 283)
-             (:list 283)
-             (:list 4245)
-             (:list 1698)))
+             (:list 1500)
+             (:list 500)
+             (:list 500)
+             (:list 500)
+             (:list 2500)
+             (:list 500)
+             (:list 500)
+             (:list 500)
+             (:list 500)
+             (:list 500 500 500 500)
+             (:list 500)
+             (:list 286)
+             (:list 285)
+             (:list 444)
+             (:list 1958)
+             (:list 400)
+             (:list 400)
+             (:list 400)
+             (:list 1200)
+             (:list 400)
+             (:list 400)
+             (:list 320)
+             (:list 160)
+             (:list 462)
+             (:list 1231)
+             (:list 800)
+             (:list 400)
+             (:list 600)
+             (:list 767)
+             (:list 500)
+             (:list 1000)
+             (:list 1500)
+             (:list 750 750 750 750)
+             (:list 750)
+             (:list 500)
+             (:list 250)
+             (:list 250)
+             (:list 250)
+             (:list 1000)
+             (:list 1750)
+             (:list 1500)
+             (:list 632)
+             (:list 631)
+             (:list 632)
+             (:list 631)
+             (:list 632 632 632 632)
+             (:list 210)
+             (:list 316)
+             (:list 316)
+             (:list 500)
+             (:list 500)
+             (:list 500)
+             (:list 500)
+             (:list 500)
+             (:list 286 286 286 286)
+             (:list 285)
+             (:list 143)
+             (:list 445)
+             (:list 444)
+             (:list 667)
+             (:list 1250 1250 1250 1250 1250 1250)
+             (:list 400)
+             (:list 400)
+             (:list 400)
+             (:list 400)
+             (:list 400 400 400 400)
+             (:list 400)
+             (:list 229)
+             (:list 228)
+             (:list 114)
+             (:list 533)
+             (:list 178)
+             (:list 178)
+             (:list 250 250 250 250)
+             (:list 375 375 375 375)
+             (:list 800 800 800 800)
+             (:list 938 938 938)
+             (:list 624 624 624)
+             (:list 625 625 625)
+             (:list 400)
+             (:list 267)
+             (:list 534)
+             (:list 267)
+             (:list 333)
+             (:list 400)
+             (:list 320)
+             (:list 320)
+             (:list 587)
+             (:list 266)
+             (:list 267)
+             (:list 334)
+             (:list 333)
+             (:list 2750)
+             (:list 400)
+             (:list 267)
+             (:list 534)
+             (:list 267)
+             (:list 333)
+             (:list 2000)
+             (:list 1000)
+             (:list 1500)
+             (:list 1750)
+             (:list 8000)
+             (:list 1500)
+             (:list 1500)
+             (:list 500)
+             (:list 500)
+             (:list 500)
+             (:list 1500)
+             (:list 500)
+             (:list 500)
+             (:list 7500)
+             (:list 3000)))
            (:lvel
             (:list
              (:list 60)
@@ -2376,7 +2432,7 @@
              (:list 20)
              (:list 40)
              (:list 20)
-             (:list 296)
+             (:list 295)
              (:list 328)
              (:list 25)
              (:list 20)
@@ -2388,11 +2444,11 @@
              (:list 20)
              (:list 20)
              (:list 25)
-             (:list 296)
+             (:list 295)
              (:list 16)
              (:list 20)
              (:list 328)
-             (:list 425)
+             (:list 419)
              (:list 328)
              (:list 295)
              (:list 328 328 328 328)
@@ -2403,7 +2459,7 @@
              (:list 25)
              (:list 40)
              (:list 20)
-             (:list 296)
+             (:list 295)
              (:list 295)
              (:list 40)
              (:list 40)
@@ -2423,12 +2479,12 @@
              (:list 20)
              (:list 20)
              (:list 25)
-             (:list 295 296 296 328 271 274)
+             (:list 295 295 295 328 271 274)
              (:list 40)
              (:list 40)
              (:list 25)
              (:list 25)
-             (:list 295 274 296 20)
+             (:list 295 274 295 20)
              (:list 20)
              (:list 25)
              (:list 20)
@@ -2436,12 +2492,12 @@
              (:list 274)
              (:list 25)
              (:list 295)
-             (:list 295 274 296 20)
-             (:list 295 274 296 20)
-             (:list 295 274 296 20)
-             (:list 274 296 20)
-             (:list 274 296 20)
-             (:list 274 296 20)
+             (:list 295 274 295 20)
+             (:list 295 274 295 20)
+             (:list 295 274 295 20)
+             (:list 274 295 20)
+             (:list 274 295 20)
+             (:list 274 295 20)
              (:list 118)
              (:list 20)
              (:list 118)
@@ -2471,11 +2527,11 @@
              (:list 118)
              (:list 20)
              (:list 295)
-             (:list 425)
+             (:list 419)
              (:list 118)
              (:list 20)
              (:list 295)
-             (:list 425)))
+             (:list 419)))
            (:lport
             (:list
              (:list nil)
@@ -2592,547 +2648,46 @@
              (:list nil)
              (:list nil)))
            (:llegato nil)
-           (:tempo 106)))))
+           (:tempo 60)))))
        (:id 1))
       (:box
-       (:type :value)
-       (:reference (:list unsigned-byte 8))
+       (:type :function)
+       (:reference flat)
        (:group-id nil)
-       (:name "value box")
-       (:x 717)
-       (:y 194)
-       (:w 42)
-       (:h 34)
-       (:color
-        (:color-or-nil
-         (:color (:color 1.0 1.0 1.0 1.0))
-         (:t-or-nil t)))
+       (:name "flat")
+       (:x 103)
+       (:y 259)
+       (:w 67)
+       (:h 30)
+       (:color nil)
        (:border nil)
        (:roundness nil)
        (:text-font nil)
        (:align nil)
+       (:icon :left)
        (:lock nil)
+       (:lambda nil)
        (:reactive nil)
-       (:inputs)
-       (:outputs (:output (:name "value") (:reactive nil)))
-       (:value 106)
+       (:inputs
+        (:input
+         (:type :standard)
+         (:name "LST")
+         (:value nil)
+         (:reactive nil))
+        (:input
+         (:type :optional)
+         (:name "level")
+         (:value nil)
+         (:reactive nil)))
+       (:outputs (:output (:name "out") (:reactive nil)))
        (:id 2))
       (:box
-       (:type :object)
-       (:reference textbuffer)
-       (:group-id nil)
-       (:name nil)
-       (:x 121/4)
-       (:y 110)
-       (:w 289)
-       (:h 80)
-       (:color nil)
-       (:border nil)
-       (:roundness nil)
-       (:text-font nil)
-       (:align :center)
-       (:display :mini-view)
-       (:showname t)
-       (:lock :locked)
-       (:lambda nil)
-       (:reactive nil)
-       (:inputs
-        (:input
-         (:type :standard)
-         (:name "SELF")
-         (:value nil)
-         (:reactive nil))
-        (:input
-         (:type :standard)
-         (:name "CONTENTS")
-         (:value nil)
-         (:reactive nil)))
-       (:outputs
-        (:output (:name "SELF") (:reactive nil))
-        (:output (:name "CONTENTS") (:reactive nil)))
-       (:window (:size (1225 439)) (:position (64 64)))
-       (:edition-params)
-       (:value
-        (:object
-         (:class textbuffer)
-         (:slots
-          ((:contents
-            (:list
-             "((3 4) (3 1 1 1)) "
-             "((5 8) (4 1.0)) "
-             "((4 4) (1 1 1 1 1 1 (2 (-1 2 2 -2)))) "
-             "((2 4) ((2 (2 -1 6)))) "
-             "((5 32) (4.0 1.0)) "
-             "((4 4) ((4 (1 1 1 3 1 1 (2 (-2 2 1)))))) "
-             "((2 4) ((2 (3 -1 8 -1)))) "
-             "((4 4) ((4 (4 2 -1 1 2.0 -2 -8)))) "
-             "((2 4) ((1 (-2 3)) (1 (1.0 -2 3)))) "
-             "((1 4) (1)) ((3 8) (3)) "
-             "((2 4) (3 1 2.0 2)) "
-             "((2 4) (-1 1 1 1 4)) "
-             "((13 16) (7 6)) "
-             "((4 4) ((4 (3 3 3 3 3 1 (3 (1 1)))))) "
-             "((4 4) (1 -1 1 1 1 1 (2 (-1 2 2 -1 1)))) "
-             "((3 32) (-3)) ((2 4) ((2 (-1 2 2 -1 3)))) "
-             "((5 16) (4 1.0)) "
-             "((4 4) ((4 (1 -2 1 1 1 1 1 (2 (-1 2 2 -1 1)))))) "
-             "((2 4) ((2 (-1 (4 (3 1 -4 1)))))) "
-             "((7 32) (2 3 -2)) "
-             "((4 20) (4)) "
-             "((15 16) ((15 (-2 3 2 -3 2)))) "
-             "((6 16) (-6)) "
-             "((4 4) ((2 (1 (4 (1 -1 -3 1)))) (2 ((2 ((4 (1.0 -1 -1 1 -1)) -1 1)))))) "
-             "((4 4) ((2 (1 (4 (1 -1 1 -1 1)))) (2 ((2 ((4 (1.0 1 -1 1 -1)) 1 1)))))) "
-             "((4 8) (-1 7)) ((4 16) (4.0)) "
-             "((4 4) ((2 (1 (4 (1 -1 -3 1)))) (2 ((2 ((4 (1.0 -1 -1 1 -1)) -1 1)))))) "
-             "((4 8) (4)) "
-             "((2 8) (2)) "
-             "((3 8) (3)) "
-             "((7 16) (7)) "
-             "((8 4) (8)) "
-             "((2 4) (-1 3)) "
-             "((3 4) (3 1 1 1)) "
-             "((3 4) (3 1 1 1)) "
-             "((7 4) (7.0)) "
-             "((3 4) (3))"))))
-         (:add-slots ((:input-mode :lines-cols)))))
-       (:id 3))
-      (:box
-       (:type :object)
-       (:reference textbuffer)
-       (:group-id nil)
-       (:name nil)
-       (:x 1379/4)
-       (:y 110)
-       (:w 342)
-       (:h 67)
-       (:color nil)
-       (:border nil)
-       (:roundness nil)
-       (:text-font nil)
-       (:align :center)
-       (:display :mini-view)
-       (:showname t)
-       (:lock :locked)
-       (:lambda nil)
-       (:reactive nil)
-       (:inputs
-        (:input
-         (:type :standard)
-         (:name "SELF")
-         (:value nil)
-         (:reactive nil))
-        (:input
-         (:type :standard)
-         (:name "CONTENTS")
-         (:value nil)
-         (:reactive nil)))
-       (:outputs
-        (:output (:name "SELF") (:reactive nil))
-        (:output (:name "CONTENTS") (:reactive nil)))
-       (:window (:size (861 500)) (:position (710 287)))
-       (:edition-params)
-       (:value
-        (:object
-         (:class textbuffer)
-         (:slots
-          ((:contents
-            (:list
-             "6555 5669 6565 5659 "
-             "6551"
-             "5000 6100 6550 5200 (4800 5502 6550 6969) 6150 5900 6400 "
-             "4800 7700 "
-             ""
-             "4900 6400 6500 7500 5400 5600 6300 6550 6700 "
-             "5100 6000 "
-             "6700 7000 7700 "
-             "7514 7750 "
-             "5400 "
-             "(7314 6290 6549 5531) "
-             "4100 4900 6200 "
-             "5300 5686 6002 6198 "
-             "7775 "
-             "5000 6100 6550 5200 (4800 5502 6550 6969) 6200 5700 6400 "
-             "6700 6100 5000 5200 6550 (7902 6550 6969 7200) 6230 5700 "
-             ""
-             "6300 6600 6200 "
-             "(5500 6633 7507 7889 6771 7205) "
-             "6550 6100 5000 5200 (4800 5502 6550 6969) 6200 5600 6400 6700 "
-             "6400 5400 4500 "
-             "(4800 5502 6550 6969) (4900 6200 6755 6969) (5000 5502 6550 7425) "
-             "(6100 6550 6969) (6220 6755 6969) (7028 6550 7425) "
-             ""
-             "6250 6700 5500 6450 6650 "
-             "6300 6500 6700 4900 6500 6400 6500 6700 "
-             "6925"
-             ""
-             "6300 6700 6450 6650 6500 "
-             ""
-             "6475 6294 5478 5796 6565 "
-             "5478 "
-             "6655 5569 6565 5659 "
-             "6675 5469 6565 5659 "
-             ""
-             "6050"))))
-         (:add-slots ((:input-mode :lines-cols)))))
-       (:id 4))
-      (:box
-       (:type :function)
-       (:reference flat)
-       (:group-id nil)
-       (:name "flat")
-       (:x 1979/4)
-       (:y 226)
-       (:w 93)
-       (:h 34)
-       (:color nil)
-       (:border nil)
-       (:roundness nil)
-       (:text-font nil)
-       (:align nil)
-       (:icon :left)
-       (:lock nil)
-       (:lambda nil)
-       (:reactive nil)
-       (:inputs
-        (:input
-         (:type :standard)
-         (:name "LST")
-         (:value nil)
-         (:reactive nil))
-        (:input
-         (:type :optional)
-         (:name "level")
-         (:value nil)
-         (:reactive nil)))
-       (:outputs (:output (:name "out") (:reactive nil)))
-       (:id 5))
-      (:box
        (:type :value)
        (:reference bit)
        (:group-id nil)
        (:name "value box")
-       (:x 539)
-       (:y 197)
-       (:w 32)
-       (:h 34)
-       (:color
-        (:color-or-nil
-         (:color (:color 1.0 1.0 1.0 1.0))
-         (:t-or-nil t)))
-       (:border nil)
-       (:roundness nil)
-       (:text-font nil)
-       (:align nil)
-       (:lock nil)
-       (:reactive nil)
-       (:inputs)
-       (:outputs (:output (:name "value") (:reactive nil)))
-       (:value 1)
-       (:id 6))
-      (:box
-       (:type :object)
-       (:reference textbuffer)
-       (:group-id nil)
-       (:name nil)
-       (:x 2853/4)
-       (:y 110)
-       (:w 334)
-       (:h 83)
-       (:color nil)
-       (:border nil)
-       (:roundness nil)
-       (:text-font nil)
-       (:align :center)
-       (:display :mini-view)
-       (:showname nil)
-       (:lock :locked)
-       (:lambda nil)
-       (:reactive nil)
-       (:inputs
-        (:input
-         (:type :standard)
-         (:name "SELF")
-         (:value nil)
-         (:reactive nil))
-        (:input
-         (:type :standard)
-         (:name "CONTENTS")
-         (:value nil)
-         (:reactive nil)))
-       (:outputs
-        (:output (:name "SELF") (:reactive nil))
-        (:output (:name "CONTENTS") (:reactive nil)))
-       (:window (:size (500 500)) (:position (710 287)))
-       (:edition-params)
-       (:value
-        (:object
-         (:class textbuffer)
-         (:slots
-          ((:contents
-            (:list
-             "60 40 40 40"
-             "80"
-             "50 60 20 30 (90 90 90 90) 40 50 60 "
-             "100 100 "
-             ""
-             "50 60 20 120 100 88 50 60 70 "
-             "80 60"
-             "20 20 10 "
-             "40 67 "
-             "50"
-             "(90 90 90 90) "
-             "90 70 50 "
-             "20 40 50 50 "
-             "60 "
-             "20 30 40 50 110 40 50 10  "
-             "50 60 20 30 50 (90 90 90 90) 40 50 "
-             ""
-             "60 70 30 "
-             "(90 90 90 90 90 90)  "
-             "50 60 20 30 (40 30 50 10) 40 50 60 70 "
-             "120 60 70 "
-             "(50 60 90 75) (90 90 90 75) (50 50 90 80) "
-             ""
-             "(50 90 50) (60 90 60) (60 90 60) "
-             ""
-             "60 70 100 60 70 "
-             ""
-             "40 40 40 40 40 40 40 40 "
-             "30"
-             ""
-             "50 60 70 80 90"
-             "30 30 30 30 30 "
-             "40 "
-             "40 40 40 40 40 "
-             "60 40 40 40 40"
-             ""
-             "50 "))))
-         (:add-slots ((:input-mode :lines-cols)))))
-       (:id 7))
-      (:box
-       (:type :function)
-       (:reference flat)
-       (:group-id nil)
-       (:name "flat")
-       (:x 938)
+       (:x 123)
        (:y 227)
-       (:w 71)
-       (:h 34)
-       (:color nil)
-       (:border nil)
-       (:roundness nil)
-       (:text-font nil)
-       (:align nil)
-       (:icon :left)
-       (:lock nil)
-       (:lambda nil)
-       (:reactive nil)
-       (:inputs
-        (:input
-         (:type :standard)
-         (:name "LST")
-         (:value nil)
-         (:reactive nil))
-        (:input
-         (:type :optional)
-         (:name "level")
-         (:value nil)
-         (:reactive nil)))
-       (:outputs (:output (:name "out") (:reactive nil)))
-       (:id 8))
-      (:box
-       (:type :value)
-       (:reference bit)
-       (:group-id nil)
-       (:name "value box")
-       (:x 963)
-       (:y 191)
-       (:w 35)
-       (:h 34)
-       (:color
-        (:color-or-nil
-         (:color (:color 1.0 1.0 1.0 1.0))
-         (:t-or-nil t)))
-       (:border nil)
-       (:roundness nil)
-       (:text-font nil)
-       (:align nil)
-       (:lock nil)
-       (:reactive nil)
-       (:inputs)
-       (:outputs (:output (:name "value") (:reactive nil)))
-       (:value 1)
-       (:id 9))
-      (:box
-       (:type :object)
-       (:reference textbuffer)
-       (:group-id nil)
-       (:name nil)
-       (:x 4277/4)
-       (:y 110)
-       (:w 334)
-       (:h 83)
-       (:color nil)
-       (:border nil)
-       (:roundness nil)
-       (:text-font nil)
-       (:align :center)
-       (:display :mini-view)
-       (:showname nil)
-       (:lock nil)
-       (:lambda nil)
-       (:reactive nil)
-       (:inputs
-        (:input
-         (:type :standard)
-         (:name "SELF")
-         (:value nil)
-         (:reactive nil))
-        (:input
-         (:type :standard)
-         (:name "CONTENTS")
-         (:value nil)
-         (:reactive nil)))
-       (:outputs
-        (:output (:name "SELF") (:reactive nil))
-        (:output (:name "CONTENTS") (:reactive nil)))
-       (:window (:size (1440 749)) (:position (240 118)))
-       (:edition-params)
-       (:value
-        (:object
-         (:class textbuffer)
-         (:slots
-          ((:contents
-            (:list
-             "40 295 20 118"
-             "328 "
-             "25 40 40 118 (295 295 295 295) 20 40 20 "
-             "295 328"
-             "25 20 20 328 118 295 25 20 20 "
-             "25 295"
-             "16 20 328 "
-             "419 328 "
-             "295 "
-             "(328 328 328 328) "
-             "295 295 295 "
-             "25 25 40 20 "
-             "295 "
-             "295 40 40 25 (274 274 274 274) 20 118 20 20 "
-             "40 118 118 40 (295 295 295 295) 20 25 "
-             ""
-             "20 20 25 "
-             "(295 295 295 328 271 274) "
-             "40 40 25 25 (295 274 295 20) 20 25 20 20 "
-             "274 25 295 "
-             "(295 274 295 20) (295 274 295 20) (295 274 295 20) "
-             "(274 295 20) (274 295 20) (274 295 20) "
-             ""
-             "118 20 118 20 20  "
-             "40 40 20 25 20 40 20 20 "
-             "118"
-             ""
-             "20 20 118 20 20"
-             "63 63 63 63 63"
-             "295"
-             "20 118 20 295"
-             "419 118 20 295"
-             ""
-             "419"))))
-         (:add-slots ((:input-mode :lines-cols)))))
-       (:id 10))
-      (:box
-       (:type :function)
-       (:reference flat)
-       (:group-id nil)
-       (:name "flat")
-       (:x 1292)
-       (:y 235)
-       (:w 69)
-       (:h 34)
-       (:color nil)
-       (:border nil)
-       (:roundness nil)
-       (:text-font nil)
-       (:align nil)
-       (:icon :left)
-       (:lock nil)
-       (:lambda nil)
-       (:reactive nil)
-       (:inputs
-        (:input
-         (:type :standard)
-         (:name "LST")
-         (:value nil)
-         (:reactive nil))
-        (:input
-         (:type :optional)
-         (:name "level")
-         (:value nil)
-         (:reactive nil)))
-       (:outputs (:output (:name "out") (:reactive nil)))
-       (:id 11))
-      (:box
-       (:type :value)
-       (:reference bit)
-       (:group-id nil)
-       (:name "value box")
-       (:x 5273/4)
-       (:y 781/4)
-       (:w 32)
-       (:h 34)
-       (:color
-        (:color-or-nil
-         (:color (:color 1.0 1.0 1.0 1.0))
-         (:t-or-nil t)))
-       (:border nil)
-       (:roundness nil)
-       (:text-font nil)
-       (:align nil)
-       (:lock nil)
-       (:reactive nil)
-       (:inputs)
-       (:outputs (:output (:name "value") (:reactive nil)))
-       (:value 1)
-       (:id 12))
-      (:box
-       (:type :function)
-       (:reference flat)
-       (:group-id nil)
-       (:name "flat")
-       (:x 220)
-       (:y 224)
-       (:w 67)
-       (:h 34)
-       (:color nil)
-       (:border nil)
-       (:roundness nil)
-       (:text-font nil)
-       (:align nil)
-       (:icon :left)
-       (:lock nil)
-       (:lambda nil)
-       (:reactive nil)
-       (:inputs
-        (:input
-         (:type :standard)
-         (:name "LST")
-         (:value nil)
-         (:reactive nil))
-        (:input
-         (:type :optional)
-         (:name "level")
-         (:value nil)
-         (:reactive nil)))
-       (:outputs (:output (:name "out") (:reactive nil)))
-       (:id 13))
-      (:box
-       (:type :value)
-       (:reference bit)
-       (:group-id nil)
-       (:name "value box")
-       (:x 240)
-       (:y 192)
        (:w 39)
        (:h 34)
        (:color
@@ -3148,7 +2703,7 @@
        (:inputs)
        (:outputs (:output (:name "value") (:reactive nil)))
        (:value 1)
-       (:id 14))
+       (:id 3))
       (:box
        (:type :abstraction)
        (:reference
@@ -3160,7 +2715,7 @@
           (:modified nil)
           (:by *app-name*)
           (:version 0))
-         (:window (:size (1321 473)) (:position (0 0)))
+         (:window (:size (951 1043)) (:position (29 56)))
          (:grid nil)
          (:lock nil)
          (:boxes
@@ -3195,12 +2750,13 @@
            (:x 50)
            (:y 100)
            (:w 195)
-           (:h 34)
+           (:h 30)
            (:color nil)
            (:border nil)
            (:roundness nil)
            (:text-font nil)
            (:align nil)
+           (:icon :left)
            (:lock nil)
            (:lambda nil)
            (:reactive nil)
@@ -3220,7 +2776,7 @@
            (:x 298)
            (:y 145)
            (:w 79)
-           (:h 34)
+           (:h 30)
            (:color nil)
            (:border nil)
            (:roundness nil)
@@ -3246,12 +2802,13 @@
            (:x 283)
            (:y 179)
            (:w 211)
-           (:h 34)
+           (:h 30)
            (:color nil)
            (:border nil)
            (:roundness nil)
            (:text-font nil)
            (:align nil)
+           (:icon :left)
            (:lock nil)
            (:lambda :lambda)
            (:reactive nil)
@@ -3276,7 +2833,7 @@
            (:x 136)
            (:y 339)
            (:w 270)
-           (:h 34)
+           (:h 30)
            (:color nil)
            (:border nil)
            (:roundness nil)
@@ -3462,7 +3019,7 @@
            (:x 524)
            (:y 232)
            (:w 88)
-           (:h 34)
+           (:h 30)
            (:color nil)
            (:border nil)
            (:roundness nil)
@@ -3516,7 +3073,7 @@
            (:x 619)
            (:y 272)
            (:w 87)
-           (:h 34)
+           (:h 30)
            (:color nil)
            (:border nil)
            (:roundness nil)
@@ -3597,8 +3154,8 @@
            (:to (:box 4 :in 1))))))
        (:group-id nil)
        (:name "my-patch")
-       (:x 757)
-       (:y 464)
+       (:x 295)
+       (:y 681)
        (:w 97)
        (:h 60)
        (:color nil)
@@ -3618,16 +3175,178 @@
          (:value nil)
          (:reactive nil)))
        (:outputs)
-       (:id 15))
+       (:id 4))
+      (:box
+       (:type :io)
+       (:reference
+        (:in (:type omin) (:index 1) (:name "in") (:doc "")))
+       (:group-id nil)
+       (:name "in")
+       (:x 44)
+       (:y 55)
+       (:w 40)
+       (:h 42)
+       (:color
+        (:color-or-nil
+         (:color (:color 1.0 1.0 1.0 0.0))
+         (:t-or-nil t)))
+       (:border 0)
+       (:roundness 0)
+       (:text-font nil)
+       (:align :center)
+       (:icon :top)
+       (:reactive nil)
+       (:inputs
+        (:input
+         (:type :optional)
+         (:name "internal input value")
+         (:value nil)
+         (:reactive nil)))
+       (:outputs (:output (:name "out") (:reactive nil)))
+       (:id 5))
       (:box
        (:type :value)
        (:reference (:symbol "SIMPLE-TEXT-STRING" "LISPWORKS"))
        (:group-id nil)
        (:name "value box")
-       (:x 1000)
-       (:y 15)
-       (:w 500)
-       (:h 34)
+       (:x 101)
+       (:y 75)
+       (:w 68)
+       (:h 30)
+       (:color
+        (:color-or-nil
+         (:color (:color 1.0 1.0 1.0 1.0))
+         (:t-or-nil t)))
+       (:border nil)
+       (:roundness nil)
+       (:text-font nil)
+       (:align nil)
+       (:lock nil)
+       (:reactive nil)
+       (:inputs)
+       (:outputs (:output (:name "value") (:reactive nil)))
+       (:value "ritmo.txt")
+       (:id 6))
+      (:box
+       (:type :function)
+       (:reference make-pathname)
+       (:group-id nil)
+       (:name "make-pathname")
+       (:x 32)
+       (:y 148)
+       (:w 127)
+       (:h 30)
+       (:color nil)
+       (:border nil)
+       (:roundness nil)
+       (:text-font nil)
+       (:align nil)
+       (:icon :left)
+       (:lock nil)
+       (:lambda nil)
+       (:reactive nil)
+       (:inputs
+        (:input
+         (:type :key)
+         (:name "directory")
+         (:value nil)
+         (:reactive nil))
+        (:input
+         (:type :key)
+         (:name "name")
+         (:value nil)
+         (:reactive nil)))
+       (:outputs (:output (:name "out") (:reactive nil)))
+       (:id 7))
+      (:box
+       (:type :object)
+       (:reference textbuffer)
+       (:group-id nil)
+       (:name nil)
+       (:x 70)
+       (:y 182)
+       (:w 80)
+       (:h 50)
+       (:color nil)
+       (:border nil)
+       (:roundness nil)
+       (:text-font nil)
+       (:align :center)
+       (:display :mini-view)
+       (:showname nil)
+       (:lock nil)
+       (:lambda nil)
+       (:reactive nil)
+       (:inputs
+        (:input
+         (:type :standard)
+         (:name "SELF")
+         (:value nil)
+         (:reactive nil))
+        (:input
+         (:type :standard)
+         (:name "CONTENTS")
+         (:value nil)
+         (:reactive nil)))
+       (:outputs
+        (:output (:name "SELF") (:reactive nil))
+        (:output (:name "CONTENTS") (:reactive nil)))
+       (:window (:size (951 519)) (:position (1058 82)))
+       (:edition-params)
+       (:value
+        (:object
+         (:class textbuffer)
+         (:slots
+          ((:contents
+            (:list
+             "((3 4) (3 1 1 1)) "
+             "((5 8) (4 1.0)) "
+             "((4 4) (1 1 1 1 1 1 (2 (-1 2 2 -2)))) "
+             "((2 4) ((2 (2 -1 6)))) "
+             "((5 32) (4.0 1.0)) "
+             "((4 4) ((4 (1 1 1 3 1 1 (2 (-2 2 1)))))) "
+             "((2 4) ((2 (3 -1 8 -1)))) "
+             "((4 4) ((4 (4 2 -1 1 2.0 -2 -8)))) "
+             "((2 4) ((1 (-2 3)) (1 (1.0 -2 3)))) "
+             "((1 4) (1)) ((3 8) (3)) "
+             "((2 4) (3 1 2.0 2)) "
+             "((2 4) (-1 1 1 1 4)) "
+             "((13 16) (7 6)) "
+             "((4 4) ((4 (3 3 3 3 3 1 (3 (1 1)))))) "
+             "((4 4) (1 -1 1 1 1 1 (2 (-1 2 2 -1 1)))) "
+             "((3 32) (-3)) ((2 4) ((2 (-1 2 2 -1 3)))) "
+             "((5 16) (4 1.0)) "
+             "((4 4) ((4 (1 -2 1 1 1 1 1 (2 (-1 2 2 -1 1)))))) "
+             "((2 4) ((2 (-1 (4 (3 1 -4 1)))))) "
+             "((7 32) (2 3 -2)) "
+             "((4 20) (4)) "
+             "((15 16) ((15 (-2 3 2 -3 2)))) "
+             "((6 16) (-6)) "
+             "((4 4) ((2 (1 (4 (1 -1 -3 1)))) (2 ((2 ((4 (1.0 -1 -1 1 -1)) -1 1)))))) "
+             "((4 4) ((2 (1 (4 (1 -1 1 -1 1)))) (2 ((2 ((4 (1.0 1 -1 1 -1)) 1 1)))))) "
+             "((4 8) (-1 7)) ((4 16) (4.0)) "
+             "((4 4) ((2 (1 (4 (1 -1 -3 1)))) (2 ((2 ((4 (1.0 -1 -1 1 -1)) -1 1)))))) "
+             "((4 8) (4)) "
+             "((2 8) (2)) "
+             "((3 8) (3)) "
+             "((7 16) (7)) "
+             "((8 4) (8)) "
+             "((2 4) (-1 3)) "
+             "((3 4) (3 1 1 1)) "
+             "((3 4) (3 1 1 1)) "
+             "((7 4) (7.0)) "
+             "((3 4) (3))"))))
+         (:add-slots ((:input-mode :lines-cols)))))
+       (:id 8))
+      (:box
+       (:type :value)
+       (:reference cons)
+       (:group-id nil)
+       (:name "value box")
+       (:x 37)
+       (:y 5)
+       (:w 454)
+       (:h 30)
        (:color
         (:color-or-nil
          (:color (:color 1.0 1.0 1.0 1.0))
@@ -3641,48 +3360,611 @@
        (:inputs)
        (:outputs (:output (:name "value") (:reactive nil)))
        (:value
-        "/home/neimog/Onedrive/Documents/Composition/Ideias Roubadas II/channel.txt")
-       (:id 16)))
+        (:list
+         :absolute
+         "home"
+         "neimog"
+         "Documents"
+         "Git"
+         "Ideias-Roubadas-II"
+         "Resources"))
+       (:id 9))
+      (:box
+       (:type :function)
+       (:reference flat)
+       (:group-id nil)
+       (:name "flat")
+       (:x 253)
+       (:y 258)
+       (:w 67)
+       (:h 30)
+       (:color nil)
+       (:border nil)
+       (:roundness nil)
+       (:text-font nil)
+       (:align nil)
+       (:icon :left)
+       (:lock nil)
+       (:lambda nil)
+       (:reactive nil)
+       (:inputs
+        (:input
+         (:type :standard)
+         (:name "LST")
+         (:value nil)
+         (:reactive nil))
+        (:input
+         (:type :optional)
+         (:name "level")
+         (:value nil)
+         (:reactive nil)))
+       (:outputs (:output (:name "out") (:reactive nil)))
+       (:id 10))
+      (:box
+       (:type :value)
+       (:reference bit)
+       (:group-id nil)
+       (:name "value box")
+       (:x 273)
+       (:y 226)
+       (:w 39)
+       (:h 34)
+       (:color
+        (:color-or-nil
+         (:color (:color 1.0 1.0 1.0 1.0))
+         (:t-or-nil t)))
+       (:border nil)
+       (:roundness nil)
+       (:text-font nil)
+       (:align nil)
+       (:lock nil)
+       (:reactive nil)
+       (:inputs)
+       (:outputs (:output (:name "value") (:reactive nil)))
+       (:value 1)
+       (:id 11))
+      (:box
+       (:type :value)
+       (:reference (:symbol "SIMPLE-TEXT-STRING" "LISPWORKS"))
+       (:group-id nil)
+       (:name "value box")
+       (:x 235)
+       (:y 80)
+       (:w 71)
+       (:h 30)
+       (:color
+        (:color-or-nil
+         (:color (:color 1.0 1.0 1.0 1.0))
+         (:t-or-nil t)))
+       (:border nil)
+       (:roundness nil)
+       (:text-font nil)
+       (:align nil)
+       (:lock nil)
+       (:reactive nil)
+       (:inputs)
+       (:outputs (:output (:name "value") (:reactive nil)))
+       (:value "notas.txt")
+       (:id 12))
+      (:box
+       (:type :function)
+       (:reference make-pathname)
+       (:group-id nil)
+       (:name "make-pathname")
+       (:x 182)
+       (:y 147)
+       (:w 127)
+       (:h 30)
+       (:color nil)
+       (:border nil)
+       (:roundness nil)
+       (:text-font nil)
+       (:align nil)
+       (:icon :left)
+       (:lock nil)
+       (:lambda nil)
+       (:reactive nil)
+       (:inputs
+        (:input
+         (:type :key)
+         (:name "directory")
+         (:value nil)
+         (:reactive nil))
+        (:input
+         (:type :key)
+         (:name "name")
+         (:value nil)
+         (:reactive nil)))
+       (:outputs (:output (:name "out") (:reactive nil)))
+       (:id 13))
+      (:box
+       (:type :object)
+       (:reference textbuffer)
+       (:group-id nil)
+       (:name nil)
+       (:x 220)
+       (:y 181)
+       (:w 80)
+       (:h 50)
+       (:color nil)
+       (:border nil)
+       (:roundness nil)
+       (:text-font nil)
+       (:align :center)
+       (:display :mini-view)
+       (:showname nil)
+       (:lock nil)
+       (:lambda nil)
+       (:reactive nil)
+       (:inputs
+        (:input
+         (:type :standard)
+         (:name "SELF")
+         (:value nil)
+         (:reactive nil))
+        (:input
+         (:type :standard)
+         (:name "CONTENTS")
+         (:value nil)
+         (:reactive nil)))
+       (:outputs
+        (:output (:name "SELF") (:reactive nil))
+        (:output (:name "CONTENTS") (:reactive nil)))
+       (:window (:size nil) (:position nil))
+       (:edition-params)
+       (:value
+        (:object
+         (:class textbuffer)
+         (:slots
+          ((:contents
+            (:list
+             "6555 5669 6565 5659 "
+             "6551"
+             "5000 6100 6550 5200 (4800 5502 6550 6969) 6150 5900 6400 "
+             "4800 7700 "
+             ""
+             "4900 6400 6500 7500 5400 5600 6300 6550 6700 "
+             "5100 6000 "
+             "6700 7000 7700 "
+             "7514 7750 "
+             "5400 "
+             "(7314 6290 6549 5531) "
+             "4100 4900 6200 "
+             "5300 5686 6002 6198 "
+             "7775 "
+             "5000 6100 6550 5200 (4800 5502 6550 6969) 6200 5700 6400 "
+             "6700 6100 5000 5200 6550 (7902 6550 6969 7200) 6230 5700 "
+             ""
+             "6300 6600 6200 "
+             "(5500 6633 7507 7889 6771 7205) "
+             "6550 6100 5000 5200 (4800 5502 6550 6969) 6200 5600 6400 6700 "
+             "6400 5400 4500 "
+             "(4800 5502 6550 6969) (4900 6200 6755 6969) (5000 5502 6550 7425) "
+             "(6100 6550 6969) (6220 6755 6969) (7028 6550 7425) "
+             ""
+             "6250 6700 5500 6450 6650 "
+             "6300 6500 6700 4900 6500 6400 6500 6700 "
+             "6925"
+             ""
+             "6300 6700 6450 6650 6500 "
+             ""
+             "6475 6294 5478 5796 6565 "
+             "5478 "
+             "6655 5569 6565 5659 "
+             "6675 5469 6565 5659 "
+             ""
+             "6050"))))
+         (:add-slots ((:input-mode :lines-cols)))))
+       (:id 14))
+      (:box
+       (:type :function)
+       (:reference flat)
+       (:group-id nil)
+       (:name "flat")
+       (:x 430)
+       (:y 259)
+       (:w 67)
+       (:h 30)
+       (:color nil)
+       (:border nil)
+       (:roundness nil)
+       (:text-font nil)
+       (:align nil)
+       (:icon :left)
+       (:lock nil)
+       (:lambda nil)
+       (:reactive nil)
+       (:inputs
+        (:input
+         (:type :standard)
+         (:name "LST")
+         (:value nil)
+         (:reactive nil))
+        (:input
+         (:type :optional)
+         (:name "level")
+         (:value nil)
+         (:reactive nil)))
+       (:outputs (:output (:name "out") (:reactive nil)))
+       (:id 15))
+      (:box
+       (:type :value)
+       (:reference bit)
+       (:group-id nil)
+       (:name "value box")
+       (:x 450)
+       (:y 227)
+       (:w 39)
+       (:h 34)
+       (:color
+        (:color-or-nil
+         (:color (:color 1.0 1.0 1.0 1.0))
+         (:t-or-nil t)))
+       (:border nil)
+       (:roundness nil)
+       (:text-font nil)
+       (:align nil)
+       (:lock nil)
+       (:reactive nil)
+       (:inputs)
+       (:outputs (:output (:name "value") (:reactive nil)))
+       (:value 1)
+       (:id 16))
+      (:box
+       (:type :value)
+       (:reference (:symbol "SIMPLE-TEXT-STRING" "LISPWORKS"))
+       (:group-id nil)
+       (:name "value box")
+       (:x 445)
+       (:y 88)
+       (:w 81)
+       (:h 30)
+       (:color
+        (:color-or-nil
+         (:color (:color 1.0 1.0 1.0 1.0))
+         (:t-or-nil t)))
+       (:border nil)
+       (:roundness nil)
+       (:text-font nil)
+       (:align nil)
+       (:lock nil)
+       (:reactive nil)
+       (:inputs)
+       (:outputs (:output (:name "value") (:reactive nil)))
+       (:value "velocity.txt")
+       (:id 17))
+      (:box
+       (:type :function)
+       (:reference make-pathname)
+       (:group-id nil)
+       (:name "make-pathname")
+       (:x 359)
+       (:y 148)
+       (:w 127)
+       (:h 30)
+       (:color nil)
+       (:border nil)
+       (:roundness nil)
+       (:text-font nil)
+       (:align nil)
+       (:icon :left)
+       (:lock nil)
+       (:lambda nil)
+       (:reactive nil)
+       (:inputs
+        (:input
+         (:type :key)
+         (:name "directory")
+         (:value nil)
+         (:reactive nil))
+        (:input
+         (:type :key)
+         (:name "name")
+         (:value nil)
+         (:reactive nil)))
+       (:outputs (:output (:name "out") (:reactive nil)))
+       (:id 18))
+      (:box
+       (:type :object)
+       (:reference textbuffer)
+       (:group-id nil)
+       (:name nil)
+       (:x 397)
+       (:y 182)
+       (:w 80)
+       (:h 50)
+       (:color nil)
+       (:border nil)
+       (:roundness nil)
+       (:text-font nil)
+       (:align :center)
+       (:display :mini-view)
+       (:showname nil)
+       (:lock nil)
+       (:lambda nil)
+       (:reactive nil)
+       (:inputs
+        (:input
+         (:type :standard)
+         (:name "SELF")
+         (:value nil)
+         (:reactive nil))
+        (:input
+         (:type :standard)
+         (:name "CONTENTS")
+         (:value nil)
+         (:reactive nil)))
+       (:outputs
+        (:output (:name "SELF") (:reactive nil))
+        (:output (:name "CONTENTS") (:reactive nil)))
+       (:window (:size nil) (:position nil))
+       (:edition-params)
+       (:value
+        (:object
+         (:class textbuffer)
+         (:slots
+          ((:contents
+            (:list
+             "60 40 40 40"
+             "80"
+             "50 60 20 30 (90 90 90 90) 40 50 60 "
+             "100 100 "
+             ""
+             "50 60 20 120 100 88 50 60 70 "
+             "80 60"
+             "20 20 10 "
+             "40 67 "
+             "50"
+             "(90 90 90 90) "
+             "90 70 50 "
+             "20 40 50 50 "
+             "60 "
+             "20 30 40 50 110 40 50 10  "
+             "50 60 20 30 50 (90 90 90 90) 40 50 "
+             ""
+             "60 70 30 "
+             "(90 90 90 90 90 90)  "
+             "50 60 20 30 (40 30 50 10) 40 50 60 70 "
+             "120 60 70 "
+             "(50 60 90 75) (90 90 90 75) (50 50 90 80) "
+             ""
+             "(50 90 50) (60 90 60) (60 90 60) "
+             ""
+             "60 70 100 60 70 "
+             ""
+             "40 40 40 40 40 40 40 40 "
+             "30"
+             ""
+             "50 60 70 80 90"
+             "30 30 30 30 30 "
+             "40 "
+             "40 40 40 40 40 "
+             "60 40 40 40 40"
+             ""
+             "50 "))))
+         (:add-slots ((:input-mode :lines-cols)))))
+       (:id 19))
+      (:box
+       (:type :function)
+       (:reference flat)
+       (:group-id nil)
+       (:name "flat")
+       (:x 616)
+       (:y 260)
+       (:w 67)
+       (:h 30)
+       (:color nil)
+       (:border nil)
+       (:roundness nil)
+       (:text-font nil)
+       (:align nil)
+       (:icon :left)
+       (:lock nil)
+       (:lambda nil)
+       (:reactive nil)
+       (:inputs
+        (:input
+         (:type :standard)
+         (:name "LST")
+         (:value nil)
+         (:reactive nil))
+        (:input
+         (:type :optional)
+         (:name "level")
+         (:value nil)
+         (:reactive nil)))
+       (:outputs (:output (:name "out") (:reactive nil)))
+       (:id 20))
+      (:box
+       (:type :value)
+       (:reference bit)
+       (:group-id nil)
+       (:name "value box")
+       (:x 636)
+       (:y 228)
+       (:w 39)
+       (:h 34)
+       (:color
+        (:color-or-nil
+         (:color (:color 1.0 1.0 1.0 1.0))
+         (:t-or-nil t)))
+       (:border nil)
+       (:roundness nil)
+       (:text-font nil)
+       (:align nil)
+       (:lock nil)
+       (:reactive nil)
+       (:inputs)
+       (:outputs (:output (:name "value") (:reactive nil)))
+       (:value 1)
+       (:id 21))
+      (:box
+       (:type :value)
+       (:reference (:symbol "SIMPLE-TEXT-STRING" "LISPWORKS"))
+       (:group-id nil)
+       (:name "value box")
+       (:x 633)
+       (:y 98)
+       (:w 85)
+       (:h 30)
+       (:color
+        (:color-or-nil
+         (:color (:color 1.0 1.0 1.0 1.0))
+         (:t-or-nil t)))
+       (:border nil)
+       (:roundness nil)
+       (:text-font nil)
+       (:align nil)
+       (:lock nil)
+       (:reactive nil)
+       (:inputs)
+       (:outputs (:output (:name "value") (:reactive nil)))
+       (:value "channel.txt")
+       (:id 22))
+      (:box
+       (:type :function)
+       (:reference make-pathname)
+       (:group-id nil)
+       (:name "make-pathname")
+       (:x 545)
+       (:y 149)
+       (:w 127)
+       (:h 30)
+       (:color nil)
+       (:border nil)
+       (:roundness nil)
+       (:text-font nil)
+       (:align nil)
+       (:icon :left)
+       (:lock nil)
+       (:lambda nil)
+       (:reactive nil)
+       (:inputs
+        (:input
+         (:type :key)
+         (:name "directory")
+         (:value nil)
+         (:reactive nil))
+        (:input
+         (:type :key)
+         (:name "name")
+         (:value nil)
+         (:reactive nil)))
+       (:outputs (:output (:name "out") (:reactive nil)))
+       (:id 23))
+      (:box
+       (:type :object)
+       (:reference textbuffer)
+       (:group-id nil)
+       (:name nil)
+       (:x 583)
+       (:y 183)
+       (:w 80)
+       (:h 50)
+       (:color nil)
+       (:border nil)
+       (:roundness nil)
+       (:text-font nil)
+       (:align :center)
+       (:display :mini-view)
+       (:showname nil)
+       (:lock nil)
+       (:lambda nil)
+       (:reactive nil)
+       (:inputs
+        (:input
+         (:type :standard)
+         (:name "SELF")
+         (:value nil)
+         (:reactive nil))
+        (:input
+         (:type :standard)
+         (:name "CONTENTS")
+         (:value nil)
+         (:reactive nil)))
+       (:outputs
+        (:output (:name "SELF") (:reactive nil))
+        (:output (:name "CONTENTS") (:reactive nil)))
+       (:window (:size nil) (:position nil))
+       (:edition-params)
+       (:value
+        (:object
+         (:class textbuffer)
+         (:slots
+          ((:contents
+            (:list
+             "40 295 20 118"
+             "328 "
+             "25 40 40 118 (295 295 295 295) 20 40 20 "
+             "295 328"
+             "25 20 20 328 118 295 25 20 20 "
+             "25 295"
+             "16 20 328 "
+             "419 328 "
+             "295 "
+             "(328 328 328 328) "
+             "295 295 295 "
+             "25 25 40 20 "
+             "295 "
+             "295 40 40 25 (274 274 274 274) 20 118 20 20 "
+             "40 118 118 40 (295 295 295 295) 20 25 "
+             ""
+             "20 20 25 "
+             "(295 295 295 328 271 274) "
+             "40 40 25 25 (295 274 295 20) 20 25 20 20 "
+             "274 25 295 "
+             "(295 274 295 20) (295 274 295 20) (295 274 295 20) "
+             "(274 295 20) (274 295 20) (274 295 20) "
+             ""
+             "118 20 118 20 20  "
+             "40 40 20 25 20 40 20 20 "
+             "118"
+             ""
+             "20 20 118 20 20"
+             "63 63 63 63 63"
+             "295"
+             "20 118 20 295"
+             "419 118 20 295"
+             ""
+             "419"))))
+         (:add-slots ((:input-mode :lines-cols)))))
+       (:id 24)))
      (:connections
       (:connection (:from (:box 1 :out 0)) (:to (:box 0 :in 0)))
       (:connection
        (:from (:box 1 :out 0))
-       (:to (:box 15 :in 0))
+       (:to (:box 4 :in 0))
        (:attributes
         (:color (:color 0.2 0.4 0.5 1.0) :style nil :modif nil)))
-      (:connection (:from (:box 2 :out 0)) (:to (:box 1 :in 3)))
-      (:connection (:from (:box 3 :out 1)) (:to (:box 13 :in 0)))
-      (:connection
-       (:from (:box 4 :out 1))
-       (:to (:box 5 :in 0))
-       (:attributes (:color nil :style nil :modif (0 -15/68))))
-      (:connection
-       (:from (:box 5 :out 0))
-       (:to (:box 1 :in 2))
-       (:attributes
-        (:color (:color 0.2 0.4 0.5 1.0) :style nil :modif nil)))
-      (:connection (:from (:box 6 :out 0)) (:to (:box 5 :in 1)))
-      (:connection (:from (:box 7 :out 1)) (:to (:box 8 :in 0)))
-      (:connection
-       (:from (:box 8 :out 0))
-       (:to (:box 1 :in 4))
-       (:attributes
-        (:color (:color 0.2 0.4 0.5 1.0) :style nil :modif nil)))
-      (:connection (:from (:box 9 :out 0)) (:to (:box 8 :in 1)))
-      (:connection (:from (:box 10 :out 1)) (:to (:box 11 :in 0)))
-      (:connection
-       (:from (:box 11 :out 0))
-       (:to (:box 1 :in 6))
-       (:attributes
-        (:color (:color 0.2 0.4 0.5 1.0) :style nil :modif nil)))
-      (:connection (:from (:box 12 :out 0)) (:to (:box 11 :in 1)))
-      (:connection (:from (:box 13 :out 0)) (:to (:box 1 :in 1)))
-      (:connection (:from (:box 14 :out 0)) (:to (:box 13 :in 1)))
-      (:connection (:from (:box 16 :out 0)) (:to (:box 10 :in 0))))))
+      (:connection (:from (:box 2 :out 0)) (:to (:box 1 :in 1)))
+      (:connection (:from (:box 3 :out 0)) (:to (:box 2 :in 1)))
+      (:connection (:from (:box 5 :out 0)) (:to (:box 7 :in 0)))
+      (:connection (:from (:box 5 :out 0)) (:to (:box 13 :in 0)))
+      (:connection (:from (:box 5 :out 0)) (:to (:box 18 :in 0)))
+      (:connection (:from (:box 5 :out 0)) (:to (:box 23 :in 0)))
+      (:connection (:from (:box 6 :out 0)) (:to (:box 7 :in 1)))
+      (:connection (:from (:box 7 :out 0)) (:to (:box 8 :in 0)))
+      (:connection (:from (:box 8 :out 1)) (:to (:box 2 :in 0)))
+      (:connection (:from (:box 9 :out 0)) (:to (:box 5 :in 0)))
+      (:connection (:from (:box 10 :out 0)) (:to (:box 1 :in 2)))
+      (:connection (:from (:box 11 :out 0)) (:to (:box 10 :in 1)))
+      (:connection (:from (:box 12 :out 0)) (:to (:box 13 :in 1)))
+      (:connection (:from (:box 13 :out 0)) (:to (:box 14 :in 0)))
+      (:connection (:from (:box 14 :out 1)) (:to (:box 10 :in 0)))
+      (:connection (:from (:box 15 :out 0)) (:to (:box 1 :in 4)))
+      (:connection (:from (:box 16 :out 0)) (:to (:box 15 :in 1)))
+      (:connection (:from (:box 17 :out 0)) (:to (:box 18 :in 1)))
+      (:connection (:from (:box 18 :out 0)) (:to (:box 19 :in 0)))
+      (:connection (:from (:box 19 :out 1)) (:to (:box 15 :in 0)))
+      (:connection (:from (:box 20 :out 0)) (:to (:box 1 :in 6)))
+      (:connection (:from (:box 21 :out 0)) (:to (:box 20 :in 1)))
+      (:connection (:from (:box 22 :out 0)) (:to (:box 23 :in 1)))
+      (:connection (:from (:box 23 :out 0)) (:to (:box 24 :in 0)))
+      (:connection (:from (:box 24 :out 1)) (:to (:box 20 :in 0))))))
    (:group-id nil)
    (:name "my-score")
-   (:x 3)
-   (:y 29)
+   (:x 9)
+   (:y 200)
    (:w 200)
    (:h 60)
    (:color nil)
@@ -3690,13 +3972,17 @@
    (:roundness nil)
    (:text-font nil)
    (:align :center)
-   (:display :hidden)
+   (:display :mini-view)
    (:pre-delay 0)
-   (:show-markers t)
    (:lock nil)
    (:lambda nil)
    (:reactive nil)
-   (:inputs)
+   (:inputs
+    (:input
+     (:type :standard)
+     (:name "in")
+     (:value nil)
+     (:reactive nil)))
    (:outputs (:output (:name "output 1") (:reactive nil)))
    (:id 2))
   (:box
@@ -3705,10 +3991,10 @@
    (:reference sound-seq-multi)
    (:group-id nil)
    (:name "sound-seq-multi")
-   (:x 117)
-   (:y 503)
+   (:x 84)
+   (:y 569)
    (:w 162)
-   (:h 34)
+   (:h 30)
    (:color nil)
    (:border nil)
    (:roundness nil)
@@ -3731,10 +4017,10 @@
    (:reference save-sound)
    (:group-id nil)
    (:name "save-sound")
-   (:x 206)
-   (:y 586)
+   (:x 266)
+   (:y 623)
    (:w 351)
-   (:h 34)
+   (:h 30)
    (:color nil)
    (:border nil)
    (:roundness nil)
@@ -3762,10 +4048,10 @@
    (:reference (:symbol "SIMPLE-TEXT-STRING" "LISPWORKS"))
    (:group-id nil)
    (:name "value box")
-   (:x 359)
-   (:y 464)
-   (:w 201)
-   (:h 95)
+   (:x 418)
+   (:y 552)
+   (:w 202)
+   (:h 62)
    (:color
     (:color-or-nil (:color (:color 1.0 1.0 1.0 1.0)) (:t-or-nil t)))
    (:border nil)
@@ -3784,17 +4070,17 @@
    (:reference voice->samples)
    (:group-id nil)
    (:name "voice->samples")
-   (:x 126)
-   (:y 467)
+   (:x 93)
+   (:y 533)
    (:w 153)
-   (:h 34)
+   (:h 30)
    (:color nil)
    (:border nil)
    (:roundness nil)
    (:text-font nil)
    (:align nil)
    (:icon :left)
-   (:lock :locked)
+   (:lock nil)
    (:lambda nil)
    (:reactive nil)
    (:inputs
@@ -3811,47 +4097,35 @@
    (:outputs (:output (:name "out") (:reactive nil)))
    (:id 6))
   (:box
-   (:library "OM-CKN")
-   (:type :function)
-   (:reference sound-transpose-sox)
+   (:type :io)
+   (:reference
+    (:in (:type ompatchin) (:index 0) (:name "THIS PATCH") (:doc "")))
    (:group-id nil)
-   (:name "sound-transpose-sox")
-   (:x 705)
-   (:y 601)
-   (:w 172)
-   (:h 34)
-   (:color nil)
-   (:border nil)
-   (:roundness nil)
+   (:name "THIS PATCH")
+   (:x 45)
+   (:y 6)
+   (:w 91)
+   (:h 42)
+   (:color
+    (:color-or-nil (:color (:color 1.0 1.0 1.0 0.0)) (:t-or-nil t)))
+   (:border 0)
+   (:roundness 0)
    (:text-font nil)
-   (:align nil)
-   (:icon :left)
-   (:lock nil)
-   (:lambda nil)
+   (:align :center)
+   (:icon :top)
    (:reactive nil)
-   (:inputs
-    (:input
-     (:type :standard)
-     (:name "SOUND")
-     (:value nil)
-     (:reactive nil))
-    (:input
-     (:type :standard)
-     (:name "CENTS")
-     (:value nil)
-     (:reactive nil)))
+   (:inputs)
    (:outputs (:output (:name "out") (:reactive nil)))
    (:id 7))
   (:box
-   (:library "OM-CKN")
    (:type :function)
-   (:reference full-sol-instruments)
+   (:reference file-path)
    (:group-id nil)
-   (:name "full-sol-instruments")
-   (:x 615)
-   (:y 481)
-   (:w 158)
-   (:h 34)
+   (:name "file-path")
+   (:x 50)
+   (:y 64)
+   (:w 82)
+   (:h 30)
    (:color nil)
    (:border nil)
    (:roundness nil)
@@ -3864,25 +4138,77 @@
    (:inputs
     (:input
      (:type :standard)
-     (:name "NOTE")
-     (:value 6000)
-     (:reactive nil))
-    (:input
-     (:type :standard)
-     (:name "NUMBER-OF-THE-INSTRUMENT")
-     (:value 20)
+     (:name "SELF")
+     (:value nil)
      (:reactive nil)))
    (:outputs (:output (:name "out") (:reactive nil)))
    (:id 8))
   (:box
+   (:type :function)
+   (:reference pathname-directory)
+   (:group-id nil)
+   (:name "pathname-directory")
+   (:x 19)
+   (:y 94)
+   (:w 144)
+   (:h 30)
+   (:color nil)
+   (:border nil)
+   (:roundness nil)
+   (:text-font nil)
+   (:align nil)
+   (:icon :left)
+   (:lock nil)
+   (:lambda nil)
+   (:reactive nil)
+   (:inputs
+    (:input
+     (:type :standard)
+     (:name "P")
+     (:value nil)
+     (:reactive nil)))
+   (:outputs (:output (:name "out") (:reactive nil)))
+   (:id 9))
+  (:box
+   (:type :function)
+   (:reference x-append)
+   (:group-id nil)
+   (:name "x-append")
+   (:x 69)
+   (:y 162)
+   (:w 90)
+   (:h 30)
+   (:color nil)
+   (:border nil)
+   (:roundness nil)
+   (:text-font nil)
+   (:align nil)
+   (:icon :left)
+   (:lock nil)
+   (:lambda nil)
+   (:reactive nil)
+   (:inputs
+    (:input
+     (:type :standard)
+     (:name "L1?")
+     (:value nil)
+     (:reactive nil))
+    (:input
+     (:type :standard)
+     (:name "L2?")
+     (:value nil)
+     (:reactive nil)))
+   (:outputs (:output (:name "out") (:reactive nil)))
+   (:id 10))
+  (:box
    (:type :value)
-   (:reference (:list unsigned-byte 8))
+   (:reference (:symbol "SIMPLE-TEXT-STRING" "LISPWORKS"))
    (:group-id nil)
    (:name "value box")
-   (:x 814)
-   (:y 566)
-   (:w 34)
-   (:h 34)
+   (:x 111)
+   (:y 127)
+   (:w 85)
+   (:h 30)
    (:color
     (:color-or-nil (:color (:color 1.0 1.0 1.0 1.0)) (:t-or-nil t)))
    (:border nil)
@@ -3893,127 +4219,8 @@
    (:reactive nil)
    (:inputs)
    (:outputs (:output (:name "value") (:reactive nil)))
-   (:value 20)
-   (:id 9))
-  (:box
-   (:type :function)
-   (:reference ckn-transpose-a-sound)
-   (:group-id nil)
-   (:name "ckn-transpose-a-sound")
-   (:x 599)
-   (:y 360)
-   (:w 185)
-   (:h 34)
-   (:color nil)
-   (:border nil)
-   (:roundness nil)
-   (:text-font nil)
-   (:align nil)
-   (:icon :left)
-   (:lock nil)
-   (:lambda nil)
-   (:reactive nil)
-   (:inputs
-    (:input
-     (:type :standard)
-     (:name "INSTRUMENTOS")
-     (:value nil)
-     (:reactive nil))
-    (:input
-     (:type :standard)
-     (:name "DESVIO")
-     (:value nil)
-     (:reactive nil)))
-   (:outputs (:output (:name "out") (:reactive nil)))
-   (:id 10))
-  (:box
-   (:type :function)
-   (:reference sound-seq-list-multi-threading)
-   (:group-id nil)
-   (:name "sound-seq-list-multi-threading")
-   (:x 597)
-   (:y 701)
-   (:w 227)
-   (:h 34)
-   (:color nil)
-   (:border nil)
-   (:roundness nil)
-   (:text-font nil)
-   (:align nil)
-   (:icon :left)
-   (:lock nil)
-   (:lambda nil)
-   (:reactive nil)
-   (:inputs
-    (:input
-     (:type :standard)
-     (:name "SOUNDS")
-     (:value nil)
-     (:reactive nil)))
-   (:outputs (:output (:name "out") (:reactive nil)))
-   (:id 11))
-  (:box
-   (:type :function)
-   (:reference build-sound-mix-fun)
-   (:group-id nil)
-   (:name "build-sound-mix-fun")
-   (:x 772)
-   (:y 226)
-   (:w 164)
-   (:h 34)
-   (:color nil)
-   (:border nil)
-   (:roundness nil)
-   (:text-font nil)
-   (:align nil)
-   (:icon :left)
-   (:lock nil)
-   (:lambda nil)
-   (:reactive nil)
-   (:inputs
-    (:input
-     (:type :standard)
-     (:name "SOUNDS")
-     (:value nil)
-     (:reactive nil)))
-   (:outputs (:output (:name "out") (:reactive nil)))
-   (:id 12))
-  (:box
-   (:type :function)
-   (:reference voice->samples-sound-fun)
-   (:group-id nil)
-   (:name "voice->samples-sound-fun")
-   (:x 586)
-   (:y 441)
-   (:w 207)
-   (:h 34)
-   (:color nil)
-   (:border nil)
-   (:roundness nil)
-   (:text-font nil)
-   (:align nil)
-   (:icon :left)
-   (:lock nil)
-   (:lambda nil)
-   (:reactive nil)
-   (:inputs
-    (:input
-     (:type :standard)
-     (:name "VOICE1")
-     (:value nil)
-     (:reactive nil))
-    (:input
-     (:type :standard)
-     (:name "PAN")
-     (:value nil)
-     (:reactive nil))
-    (:input
-     (:type :standard)
-     (:name "TEMP-FILES")
-     (:value nil)
-     (:reactive nil)))
-   (:outputs (:output (:name "out") (:reactive nil)))
-   (:id 13)))
+   (:value "Resources")
+   (:id 11)))
  (:connections
   (:connection (:from (:box 0 :out 0)) (:to (:box 6 :in 1)))
   (:connection (:from (:box 1 :out 0)) (:to (:box 6 :in 0)))
@@ -4021,5 +4228,12 @@
   (:connection (:from (:box 3 :out 0)) (:to (:box 4 :in 0)))
   (:connection (:from (:box 5 :out 0)) (:to (:box 4 :in 1)))
   (:connection (:from (:box 6 :out 0)) (:to (:box 3 :in 0)))
-  (:connection (:from (:box 8 :out 0)) (:to (:box 7 :in 0)))
-  (:connection (:from (:box 9 :out 0)) (:to (:box 7 :in 1)))))
+  (:connection (:from (:box 7 :out 0)) (:to (:box 8 :in 0)))
+  (:connection (:from (:box 8 :out 0)) (:to (:box 9 :in 0)))
+  (:connection (:from (:box 9 :out 0)) (:to (:box 10 :in 0)))
+  (:connection (:from (:box 10 :out 0)) (:to (:box 2 :in 0)))
+  (:connection
+   (:from (:box 10 :out 0))
+   (:to (:box 0 :in 0))
+   (:attributes (:color nil :style nil :modif (0 -0.45))))
+  (:connection (:from (:box 11 :out 0)) (:to (:box 10 :in 1)))))
