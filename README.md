@@ -2,6 +2,15 @@
 
 `Ideias Roubadas II` uses the Meta-Instrument idea. I intend to create an "instrument" using multiple instruments using a collage technique. I also searched about the rhythms proposed by Arthur Kampela using the rhythms trees of OM-Sharp to take advantage of the high rhythm precision of the electroacoustic environment.
 
+<h1 align="center">Contents</h1> 
+
+- [Dependencies](#Dependencies)
+    - [Orchidea Sol](#orchidea-sol)
+    - [OM-Sharp](#om-sharp)
+        - [OM-Sharp Libraries](#om-sharp-libraries)
+- [Instructions](#instructions)
+
+
 # Dependencies
 
 If you want to run or test the piece.
