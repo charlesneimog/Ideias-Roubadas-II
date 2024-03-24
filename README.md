@@ -1,10 +1,10 @@
-# Ideias-Roubadas-II
-
-`Ideias Roubadas II` uses the Meta-Instrument idea. I intend to create an "instrument" using multiple instruments using a collage technique. I also searched about the rhythms proposed by Arthur Kampela using the rhythms trees of OM-Sharp to take advantage of the high rhythm precision of the electroacoustic environment.
-
 <p align="center">
     <img src="https://github.com/charlesneimog/Ideias-Roubadas-II/blob/544d9e6e24cbe6e23ad78996804f24dc8e980f85/Score/Ideias%20Roubadas%20II%20-%20Copia%20-%20Partitura%20completa_1.png"></img>
 </p>
+
+`Ideias Roubadas II` uses the Meta-Instrument idea. I intend to create an "instrument" using multiple instruments using a collage technique. I also searched about the rhythms proposed by Arthur Kampela using the rhythms trees of OM-Sharp to take advantage of the high rhythm precision of the electroacoustic environment.
+
+
 
 
 <h1 align="center">Contents</h1> 
